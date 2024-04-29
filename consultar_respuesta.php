@@ -7,19 +7,19 @@ if (!isset($_SESSION['username'])) {
 include 'conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtener el número de documento enviado por el formulario
+    
     $numero_documento = $_POST['numero_documento'];
 
-    // Consultar la base de datos para obtener la respuesta del gerente
+    
     $sql = "SELECT Mensaje FROM respuestas WHERE SolicitudID IN (SELECT ID FROM solicitudes WHERE numero_documento = '$numero_documento')";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // Si hay resultados, mostrar la respuesta
+        
         $row = $result->fetch_assoc();
         $respuesta = $row['Mensaje'];
     } else {
-        // Si no hay resultados, mostrar un mensaje indicando que no se encontró la respuesta
+        
         $respuesta = "No se encontró respuesta para el número de documento proporcionado.";
     }
 }

@@ -12,7 +12,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nueva Solicitud</title>
-    <!-- CSS FILES -->                
+                    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200&family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
@@ -59,7 +59,7 @@ $result = $conn->query($sql);
                                         <select name="tipo_solicitud" id="tipo_solicitud" class="form-control" required="">
                                             <option value="" disabled selected>Seleccionar Tipo de Solicitud</option>
                                             <?php
-                                            // Generar las opciones del menú desplegable con los tipos de solicitud
+                                            
                                             if ($result->num_rows > 0) {
                                                 while ($row = $result->fetch_assoc()) {
                                                     echo "<option value='" . $row["id"] . "'>" . $row["nombre"] . "</option>";
@@ -78,7 +78,7 @@ $result = $conn->query($sql);
                                         <label for="descripcion">Descripción de la Solicitud</label>
                                     </div>
                                 </div>
-                                <!-- Botón de enviar solicitud -->
+                                
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-lg-5 col-md-5 col-5 ms-auto">
                                         <button type="submit" class="form-control">Enviar Solicitud</button>
@@ -91,7 +91,7 @@ $result = $conn->query($sql);
             </div>
         </section>
     </main>
-    <!-- JAVASCRIPT FILES -->
+    
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/countdown.js"></script>
@@ -99,6 +99,6 @@ $result = $conn->query($sql);
 </body>
 </html>
 <?php
-// Cerrar la conexión
+
 $conn->close();
 ?>

@@ -6,11 +6,11 @@ if (!isset($_SESSION['username'])) {
 }
 include 'conexion.php';
 
-// Obtener todas las solicitudes no atendidas
+
 $sql = "SELECT * FROM solicitudes_usuarios WHERE estado = 1 ORDER BY fecha_solicitud ASC";
 $result = $conn->query($sql);
 
-// Crear archivo Excel
+
 $filename = "solicitudes_pendientes_" . date('Y-m-d') . ".csv";
 header('Content-Type: text/csv');
 header('Content-Disposition: attachment; filename="' . $filename . '"');

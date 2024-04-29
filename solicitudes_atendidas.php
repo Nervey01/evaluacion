@@ -6,7 +6,7 @@ if (!isset($_SESSION['username'])) {
 }
 include 'conexion.php';
 
-// Obtener todas las solicitudes atendidas
+
 $sql = "SELECT * FROM solicitudes_usuarios WHERE estado = 2 ORDER BY numero_documento ASC";
 $result = $conn->query($sql);
 ?>
@@ -14,7 +14,7 @@ $result = $conn->query($sql);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Encabezado del HTML -->
+    
 </head>
 <body>
     <h1>Bienvenido, <?php echo $_SESSION['username']; ?></h1>

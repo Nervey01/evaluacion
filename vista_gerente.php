@@ -6,7 +6,7 @@ if (!isset($_SESSION['username'])) {
 }
 include 'conexion.php';
 
-// Obtener todas las solicitudes no atendidas
+
 $sql = "SELECT solicitudes_usuarios.*, respuestas.Mensaje AS respuesta 
         FROM solicitudes_usuarios 
         LEFT JOIN respuestas ON solicitudes_usuarios.id = respuestas.SolicitudID 
@@ -18,7 +18,7 @@ $result = $conn->query($sql);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Encabezado del HTML -->
+    
 </head>
 <body>
     <h1>Bienvenido, <?php echo $_SESSION['username']; ?></h1>

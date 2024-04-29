@@ -8,7 +8,7 @@ include 'conexion.php';
 
 $numero_documento = $_SESSION['numero_documento'];
 
-// Obtener todas las solicitudes atendidas por el usuario
+
 $sql = "SELECT * FROM solicitudes_usuarios WHERE estado = 2 AND numero_documento = '$numero_documento' ORDER BY fecha_solicitud ASC";
 $result = $conn->query($sql);
 ?>
@@ -16,7 +16,7 @@ $result = $conn->query($sql);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Encabezado del HTML -->
+
 </head>
 <body>
     <h1>Bienvenido, <?php echo $_SESSION['username']; ?></h1>
